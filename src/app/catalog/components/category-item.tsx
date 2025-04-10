@@ -10,7 +10,7 @@ const CategoryItem = ({ category }: CategoryItemProps) => {
   return (
     <Link href={`/category/${category.slug}`}>
       <div className="flex flex-col">
-        <div className="flex h-[150px] w-full items-center justify-center rounded-tl-lg rounded-tr-lg bg-category-item-gradient">
+        <div className="bg-category-item-gradient flex h-[150px] w-full items-center justify-center rounded-tl-lg rounded-tr-lg">
           {/* IMAGEM */}
           <Image
             src={category.imageUrl}
@@ -18,7 +18,10 @@ const CategoryItem = ({ category }: CategoryItemProps) => {
             width={0}
             height={0}
             sizes="100vw"
-            className="h-auto max-h-[70%] w-auto max-w-[80%] object-contain"
+            className="h-auto max-h-[70%] w-auto max-w-[80%]"
+            style={{
+              objectFit: "contain",
+            }}
           />
         </div>
 
