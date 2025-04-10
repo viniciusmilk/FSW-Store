@@ -53,7 +53,7 @@ const Header = () => {
           </Button>
         </SheetTrigger>
 
-        <SheetContent side="left" className="w-[21.875rem]">
+        <SheetContent side="left">
           <SheetHeader className="text-left text-lg font-semibold">
             Menu
           </SheetHeader>
