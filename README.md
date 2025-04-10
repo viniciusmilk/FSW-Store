@@ -1,4 +1,4 @@
-# Projeto Full Stack Week 2.0 💻
+# Projeto Full Stack Week 💻
 
 Este é o repositório oficial do e-commerce desenvolvido durante a Full Stack Week, um evento diferente de tudo que você já viu, com 4 lives de muito conteúdo. Nosso objetivo principal é criar um projeto altamente relevante, utilizando as tecnologias mais modernas e demandadas pelo mercado, a fim de adicionar autoridade ao currículo de desenvolvedor.
 
@@ -34,9 +34,69 @@ Este é o repositório oficial do e-commerce desenvolvido durante a Full Stack W
 
 ## Protótipo no Figma 🎨
 
-Você pode visualizar o protótipo do nosso projeto no Figma. Ele oferece uma prévia visual de como a interface do usuário é projetada e como as diferentes funcionalidades são organizadas. Confira o protótipo [aqui](https://www.figma.com/file/Y8jmabSZXxAobeUJQdI4bm/FSW-Store-%5BLive%5D?type=design&mode=design&t=JoIB87O9jkqADxpN-1).
+Você pode visualizar o protótipo do nosso projeto no Figma. Ele oferece uma prévia visual de como a interface do usuário é projetada e como as diferentes funcionalidades são organizadas. Confira o protótipo [aqui](https://www.figma.com/proto/8VmwuO1vnKChtYwgOrOeHQ/File-System-Web-Store?node-id=344-100&p=f&t=Buo4xHi9yFvISpw1-0&scaling=min-zoom&content-scaling=fixed&page-id=344%3A99).
 
 Fique à vontade para explorar e compartilhar suas opiniões sobre o design do projeto!
+
+## Como Rodar o Projeto Localmente 🖥️
+
+Siga os passos abaixo para configurar e executar o projeto em sua máquina local:
+
+### Pré-requisitos
+
+Certifique-se de ter as seguintes ferramentas instaladas:
+
+- **Node.js** (versão 18 ou superior)
+- **npm** ou **yarn**
+- **Docker** e **Docker Compose** (opcional, mas recomendado para rodar o banco de dados)
+- **PostgreSQL** (caso não utilize Docker)
+
+### Passo a Passo
+
+1. **Clone o repositório:**
+
+   ```bash
+   git clone https://github.com/viniciusmilk/fsw-store.git
+   cd fsw-store
+   ```
+
+2. **Copie o arquivo de exemplo de variáveis de ambiente:**
+
+   ```bash
+   cp .env.example .env
+   ```
+
+3. **Instale as dependências:**
+
+   ```bash
+   npm install
+   ```
+
+4. **Suba os containers do Docker:**
+
+   ```bash
+   docker compose up -d
+   ```
+
+5. **Execute as migrações do Prisma:**
+    #### Certifique-se de que a variável de ambiente DATABASE_URL no arquivo .env tenha o seguinte valor DATABASE_URL="postgresql://postgres:password@localhost:5432/app"
+
+   ```bash
+   npx prisma migrate dev
+   ```
+
+6. **Execute o seed do banco de dados:**
+
+   ```bash
+   npx prisma db seed
+   ```
+
+7. **Inicie o servidor de desenvolvimento:**
+
+   ```bash
+   npm run dev
+   ```
+
 
 ## Contribuições e Colaborações 🤝
 
@@ -55,3 +115,9 @@ Este projeto está totalmente aberto a contribuições. Se você deseja colabora
 3. Faça suas alterações e adicione commits descritivos (seguindo o Conventional Commits, preferencialmente).
 
 4. Crie um pull request para a branch `main` deste repositório.
+
+5. Envie suas alterações para o seu repositório forkado:
+
+```bash
+    git push origin minha-contribuicao
+```
